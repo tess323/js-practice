@@ -19,3 +19,23 @@ if(computerChoice<= 0.33) {
     }
     
 console.log(computerChoice);
+
+
+// writing a compare function with all of the options for rps
+
+function compare (choice1, choice2) {
+    if(choice1===choice2) {
+        return "The result is a tie!";
+    } else if (choice2==="scissors") {
+        return "scissors wins";
+    }else if (choice1==="paper") {
+        if (choice2 ==="rock"){
+            return"paper wins";
+        } else if (choice2==="scissors") {
+            return "scissors win";
+        }  
+    } 
+    else {
+        return "paper wins";
+    } 
+}
