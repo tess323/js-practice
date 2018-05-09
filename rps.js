@@ -1,28 +1,19 @@
-// user and computer choice for RPS
 
+// defining user input via a pop up
+var userChoice = prompt("Do you choose rock, paper or scissors?");
 
-
-var userChoice = prompt("Do you choose rock, paper or scissors");
-
-console.log(userChoice);
-
+// using math random to find the computers input
 var computerChoice = Math.random();
-
-console.log(computerChoice);
-
-if(computerChoice<= 0.33) {
-    computerChoice="rock";
-    }else if (computerChoice>= 0.33 && computerChoice <= 0.67) {
-        computerChoice="paper";
-    } else {
-        computerChoice="scissors";
-    }
-    
-console.log(computerChoice);
+if (computerChoice < 0.34) {
+	computerChoice = "rock";
+} else if(computerChoice <= 0.67) {
+	computerChoice = "paper";
+} else {
+	computerChoice = "scissors";
+} console.log("Computer: " + computerChoice);
 
 
-// writing a compare function with all of the options for rps
-
+// function to compare user choice and computer choice
 function compare (choice1, choice2) {
     if(choice1===choice2) {
         return "The result is a tie!";
@@ -34,8 +25,20 @@ function compare (choice1, choice2) {
         } else if (choice2==="scissors") {
             return "scissors win";
         }  
-    } 
+    } else if(choice2==="rock") {
+        return "rock wins";
+    } else if (choice2==="paper"){
+        return "scissors wins"
+        }
     else {
         return "paper wins";
     } 
 }
+
+// calling function above with the variables above
+
+compare(userChoice, computerChoice);
+
+// print result to screen
+
+document.write(compare(userChoice, computerChoice));
